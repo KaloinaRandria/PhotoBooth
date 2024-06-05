@@ -44,7 +44,7 @@
             <task id="1" uid="a68067074950445e85ce5d263bb0007a" name="maquettage" meeting="false" start="2024-04-24" duration="29" complete="50" thirdDate="2024-05-30" thirdDate-constraint="0" expand="true"/>
         </task>
         <task id="3" uid="501581fce983481ebf66407001e80c58" name="fonctionnalités" meeting="false" start="2024-04-24" duration="29" complete="0" thirdDate="2024-04-24" thirdDate-constraint="0" expand="true">
-            <task id="4" uid="6a56aa2d68d64378a7253ab682207ea2" name="frontend" meeting="false" start="2024-04-24" duration="29" complete="0" expand="true">
+            <task id="4" uid="6a56aa2d68d64378a7253ab682207ea2" name="frontend" meeting="false" start="2024-04-24" duration="29" complete="0" expand="false">
                 <task id="9" uid="5f1db1792add4db7a019aca2e4726091" name="login admin" meeting="false" start="2024-06-03" duration="1" complete="10" thirdDate="2024-04-26" thirdDate-constraint="0" expand="true">
                     <notes><![CDATA[-Template login]]></notes>
                 </task>
@@ -130,64 +130,137 @@ Element :
                     </task>
                 </task>
             </task>
-            <task id="5" uid="fca5ec5cbba643b1957a28b2fd13792f" name="backend" meeting="false" start="2024-04-24" duration="29" complete="0" expand="true">
+            <task id="5" uid="fca5ec5cbba643b1957a28b2fd13792f" name="backend" meeting="false" start="2024-04-24" duration="29" complete="0" expand="false">
                 <task id="8" uid="1282fa63fb744a94af62787938617344" name="login admin" meeting="false" start="2024-06-03" duration="1" complete="0" thirdDate="2024-04-26" thirdDate-constraint="0" expand="true">
                     <notes><![CDATA[-création fonction :
-	- check-login ( Username/Password )
-	- check-role ( Admin/Simple Emplolye )        
+	- check-login ( Membre | Membre)       
 ]]></notes>
                 </task>
-                <task id="10" uid="83eef12dabb146afa2804ce7b8d55f24" name="Accueil" meeting="false" start="2024-04-24" duration="3" complete="0" expand="false">
-                    <task id="19" uid="e06cad5fa5664b01b5d5cb43936e0a50" name="employe" color="#000000" meeting="false" start="2024-04-26" duration="1" complete="0" expand="true">
-                        <task id="20" uid="59e1597053ae4544900a56d7230435fa" name="insertion" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" expand="true"/>
+                <task id="10" uid="83eef12dabb146afa2804ce7b8d55f24" name="Accueil" meeting="false" start="2024-04-24" duration="3" complete="0" expand="true">
+                    <task id="19" uid="e06cad5fa5664b01b5d5cb43936e0a50" name="employe" color="#000000" meeting="false" start="2024-04-26" duration="1" complete="0" expand="false">
+                        <task id="20" uid="59e1597053ae4544900a56d7230435fa" name="insertion" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" thirdDate="2024-04-26" thirdDate-constraint="0" expand="true">
+                            <notes><![CDATA[-création fonction :
+	- insert-employe (Employe | Boolean,String)  
+]]></notes>
+                        </task>
                         <task id="71" uid="5c498b99742b44cfafe349c840bc4a53" name="statistique" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" expand="true"/>
                         <task id="21" uid="b37de8010a4947358c4bbf1cf7315db1" name="liste" color="#000000" meeting="false" start="2024-04-26" duration="1" complete="0" expand="true">
-                            <task id="22" uid="82a7899ffcec449e9f7e7a0c4902e6a3" name="modification" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" expand="true"/>
-                            <task id="23" uid="95d300adf2bf4226bfa298a26395a0de" name="suppression" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" expand="true"/>
-                            <task id="24" uid="bbcc47a34a6d426aade8546f97c4e55c" name="recherche" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" expand="true"/>
+                            <task id="22" uid="82a7899ffcec449e9f7e7a0c4902e6a3" name="modification" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" thirdDate="2024-04-26" thirdDate-constraint="0" expand="true">
+                                <notes><![CDATA[-création fonction :
+	- update-employe (idEmploye | Boolean,String)]]></notes>
+                            </task>
+                            <task id="23" uid="95d300adf2bf4226bfa298a26395a0de" name="suppression" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" thirdDate="2024-04-26" thirdDate-constraint="0" expand="true">
+                                <notes><![CDATA[-création fonction :
+	- delete-employe (idEmploye | Bollean,String)]]></notes>
+                            </task>
+                            <task id="24" uid="bbcc47a34a6d426aade8546f97c4e55c" name="recherche" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" thirdDate="2024-04-26" thirdDate-constraint="0" expand="true">
+                                <notes><![CDATA[-création fonction :
+	- find-employe (Employe | Employe[] , String)]]></notes>
+                            </task>
                         </task>
                     </task>
                     <task id="56" uid="5f2f199be4f04a46b26c6bf2af943d0f" name="reservation" color="#000000" meeting="false" start="2024-04-26" duration="1" complete="0" expand="false">
-                        <task id="57" uid="c1af893f4e0547e9ba9b9a61ec2b4465" name="insertion" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" expand="true"/>
+                        <task id="57" uid="c1af893f4e0547e9ba9b9a61ec2b4465" name="insertion" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" thirdDate="2024-04-26" thirdDate-constraint="0" expand="true">
+                            <notes><![CDATA[-création fonction :
+	- insert-reservation (Reservation | Boolean,String)  
+]]></notes>
+                        </task>
                         <task id="72" uid="fd9593fcfe644cfba78c2711e7c3a41d" name="statistique" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" expand="true"/>
-                        <task id="58" uid="9bf0f53b10174b00a79c322ee1fa1269" name="liste" color="#000000" meeting="false" start="2024-04-26" duration="1" complete="0" expand="false">
-                            <task id="59" uid="5cd42da5dae9420393c30ef26f6fb7c4" name="modification" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" expand="true"/>
-                            <task id="60" uid="37ce7fe2425b431a8eaecc5d66c1aff6" name="suppression" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" expand="true"/>
-                            <task id="61" uid="f39125de13274d40b50251d02140e505" name="recherche" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" expand="true"/>
+                        <task id="58" uid="9bf0f53b10174b00a79c322ee1fa1269" name="liste" color="#000000" meeting="false" start="2024-04-26" duration="1" complete="0" expand="true">
+                            <task id="59" uid="5cd42da5dae9420393c30ef26f6fb7c4" name="modification" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" thirdDate="2024-04-26" thirdDate-constraint="0" expand="true">
+                                <notes><![CDATA[-création fonction :
+	- update-reservation (idReservation | Boolean,String)]]></notes>
+                            </task>
+                            <task id="60" uid="37ce7fe2425b431a8eaecc5d66c1aff6" name="suppression" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" thirdDate="2024-04-26" thirdDate-constraint="0" expand="true">
+                                <notes><![CDATA[-création fonction :
+	- delete-reservation (idReservation | Bollean,String)]]></notes>
+                            </task>
+                            <task id="61" uid="f39125de13274d40b50251d02140e505" name="recherche" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" thirdDate="2024-04-26" thirdDate-constraint="0" expand="true">
+                                <notes><![CDATA[-création fonction :
+	- find-reservation (Reservation | Reservation[] , String)]]></notes>
+                            </task>
                         </task>
                     </task>
                     <task id="38" uid="ab824b9edef54c4d80d05df2e44dea57" name="theme" color="#000000" meeting="false" start="2024-04-26" duration="1" complete="0" expand="false">
-                        <task id="39" uid="c7eac1a498a84014b9e6af4694f76f65" name="insertion" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" expand="true"/>
+                        <task id="39" uid="c7eac1a498a84014b9e6af4694f76f65" name="insertion" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" thirdDate="2024-04-26" thirdDate-constraint="0" expand="true">
+                            <notes><![CDATA[-création fonction :
+	- insert-theme (Theme | Boolean,String)  
+]]></notes>
+                        </task>
                         <task id="73" uid="8b37a541b5924ff482fe9d0ae9cf3870" name="statistique" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" expand="true"/>
                         <task id="40" uid="d0ac4ddfca244484806479f1b018a794" name="liste" color="#000000" meeting="false" start="2024-04-26" duration="1" complete="0" expand="true">
-                            <task id="41" uid="be7bd58c62fd4eb28002237e388299fc" name="modification" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" expand="true"/>
-                            <task id="42" uid="d92da5f0233041249fb10d6992520804" name="suppression" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" expand="true"/>
-                            <task id="43" uid="8316d74eecc64c15b153501ea31118db" name="recherche" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" expand="true"/>
+                            <task id="41" uid="be7bd58c62fd4eb28002237e388299fc" name="modification" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" thirdDate="2024-04-26" thirdDate-constraint="0" expand="true">
+                                <notes><![CDATA[-création fonction :
+	- update-theme(idTheme | Boolean,String)]]></notes>
+                            </task>
+                            <task id="42" uid="d92da5f0233041249fb10d6992520804" name="suppression" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" thirdDate="2024-04-26" thirdDate-constraint="0" expand="true">
+                                <notes><![CDATA[-création fonction :
+	- delete-theme (idTheme | Bollean,String)]]></notes>
+                            </task>
+                            <task id="43" uid="8316d74eecc64c15b153501ea31118db" name="recherche" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" thirdDate="2024-04-26" thirdDate-constraint="0" expand="true">
+                                <notes><![CDATA[-création fonction :
+	- find-theme (Theme | Theme[] , String)]]></notes>
+                            </task>
                         </task>
                     </task>
-                    <task id="105" uid="1093a98604f043a28d7ee79a7e8595d7" name="client" color="#000000" meeting="false" start="2024-04-26" duration="1" complete="0" expand="true">
-                        <task id="106" uid="614d92edf2d7497384878a54e3562f7c" name="insertion" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" expand="true"/>
+                    <task id="105" uid="1093a98604f043a28d7ee79a7e8595d7" name="client" color="#000000" meeting="false" start="2024-04-26" duration="1" complete="0" expand="false">
+                        <task id="106" uid="614d92edf2d7497384878a54e3562f7c" name="insertion" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" thirdDate="2024-04-26" thirdDate-constraint="0" expand="true">
+                            <notes><![CDATA[-création fonction :
+	- insert-client (Client | Boolean,String)  
+]]></notes>
+                        </task>
                         <task id="107" uid="ca1eadac932a4f1da42acdeb51f09cc6" name="statistique" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" expand="true"/>
                         <task id="108" uid="00c3a856bbfe4701b4527c37796a0eb5" name="liste" color="#000000" meeting="false" start="2024-04-26" duration="1" complete="0" expand="true">
-                            <task id="109" uid="0cb355d8dc04407b835d60d71029393a" name="modification" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" expand="true"/>
-                            <task id="110" uid="0626a7aea94f44ea8912c07a9e02ee78" name="suppression" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" expand="true"/>
-                            <task id="111" uid="ec220b38d5554f0faf83e38d74550e11" name="recherche" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" expand="true"/>
+                            <task id="109" uid="0cb355d8dc04407b835d60d71029393a" name="modification" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" thirdDate="2024-04-26" thirdDate-constraint="0" expand="true">
+                                <notes><![CDATA[-création fonction :
+	- update-client(idClient | Boolean,String)]]></notes>
+                            </task>
+                            <task id="110" uid="0626a7aea94f44ea8912c07a9e02ee78" name="suppression" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" thirdDate="2024-04-26" thirdDate-constraint="0" expand="true">
+                                <notes><![CDATA[-création fonction :
+	- delete-client (idClient | Bollean,String)]]></notes>
+                            </task>
+                            <task id="111" uid="ec220b38d5554f0faf83e38d74550e11" name="recherche" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" thirdDate="2024-04-26" thirdDate-constraint="0" expand="true">
+                                <notes><![CDATA[-création fonction :
+	- find-client (Client | Client[] , String)]]></notes>
+                            </task>
                         </task>
                     </task>
-                    <task id="131" uid="b4c38a0e579e43fb9f09e35fe2ff92df" name="chiffre d'affaire" color="#000000" meeting="false" start="2024-04-24" duration="1" complete="0" expand="true">
-                        <task id="132" uid="334018316dac4a88922949108d7f899e" name="Statistique" color="#000000" meeting="false" start="2024-04-24" duration="1" complete="0" expand="false">
-                            <task id="133" uid="79521e815cfc465e9faa48f63397522b" name="Theme" color="#8cb6ce" meeting="false" start="2024-04-24" duration="1" complete="0" expand="true"/>
-                            <task id="134" uid="2923806aa3fa45b6866189026e58bd59" name="Client" color="#8cb6ce" meeting="false" start="2024-04-24" duration="1" complete="0" expand="true"/>
-                            <task id="135" uid="fb2535c80b1d40c79e32388b52958e63" name="Depense" color="#8cb6ce" meeting="false" start="2024-04-24" duration="1" complete="0" expand="true"/>
+                    <task id="131" uid="b4c38a0e579e43fb9f09e35fe2ff92df" name="chiffre d'affaire" color="#000000" meeting="false" start="2024-04-24" duration="1" complete="0" expand="false">
+                        <task id="132" uid="334018316dac4a88922949108d7f899e" name="Statistique" color="#000000" meeting="false" start="2024-04-24" duration="1" complete="0" expand="true">
+                            <task id="133" uid="79521e815cfc465e9faa48f63397522b" name="Theme" color="#8cb6ce" meeting="false" start="2024-04-24" duration="1" complete="0" thirdDate="2024-04-24" thirdDate-constraint="0" expand="true">
+                                <notes><![CDATA[-création fonction :
+	- get-stat-by-theme (None | Array[] , String)]]></notes>
+                            </task>
+                            <task id="134" uid="2923806aa3fa45b6866189026e58bd59" name="Client" color="#8cb6ce" meeting="false" start="2024-04-24" duration="1" complete="0" thirdDate="2024-04-24" thirdDate-constraint="0" expand="true">
+                                <notes><![CDATA[-création fonction :
+	- get-stat-by-client (None | Array[] , String)]]></notes>
+                            </task>
+                            <task id="135" uid="fb2535c80b1d40c79e32388b52958e63" name="Depense" color="#8cb6ce" meeting="false" start="2024-04-24" duration="1" complete="0" thirdDate="2024-04-24" thirdDate-constraint="0" expand="true">
+                                <notes><![CDATA[-création fonction :
+	- get-stat-by-depense (None | Array[] , String)]]></notes>
+                            </task>
                         </task>
                     </task>
                     <task id="84" uid="07c28646a61d4d489febe1704ac5416d" name="materiel" color="#000000" meeting="false" start="2024-04-26" duration="1" complete="0" expand="false">
-                        <task id="85" uid="a4d64cb3313b4429a81d3fc3598bc338" name="insertion" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" expand="true"/>
+                        <task id="85" uid="a4d64cb3313b4429a81d3fc3598bc338" name="insertion" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" thirdDate="2024-04-26" thirdDate-constraint="0" expand="true">
+                            <notes><![CDATA[-création fonction :
+	- insert-materiel (Materiel | Boolean,String)  
+]]></notes>
+                        </task>
                         <task id="86" uid="3d86bd5cf3b7439ab94db1eecc5b0e4c" name="statistique" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" expand="true"/>
                         <task id="87" uid="487ce9d19b8943c099eb30fa062e3289" name="liste" color="#000000" meeting="false" start="2024-04-26" duration="1" complete="0" expand="true">
-                            <task id="88" uid="c66ed23858884a45980521116f7b482c" name="modification" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" expand="true"/>
-                            <task id="89" uid="89efefed42164e1a9e5b7995f395e852" name="suppression" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" expand="true"/>
-                            <task id="90" uid="ba66dd9033d441958b2cf2f5b646ee78" name="recherche" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" expand="true"/>
+                            <task id="88" uid="c66ed23858884a45980521116f7b482c" name="modification" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" thirdDate="2024-04-26" thirdDate-constraint="0" expand="true">
+                                <notes><![CDATA[-création fonction :
+	- update-materiel (idMateriel | Boolean,String)]]></notes>
+                            </task>
+                            <task id="89" uid="89efefed42164e1a9e5b7995f395e852" name="suppression" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" thirdDate="2024-04-26" thirdDate-constraint="0" expand="true">
+                                <notes><![CDATA[-création fonction :
+	- delete-materiel (idMateriel | Boolean,String)]]></notes>
+                            </task>
+                            <task id="90" uid="ba66dd9033d441958b2cf2f5b646ee78" name="recherche" color="#8cb6ce" meeting="false" start="2024-04-26" duration="1" complete="0" thirdDate="2024-04-26" thirdDate-constraint="0" expand="true">
+                                <notes><![CDATA[-création fonction :
+	- find-materiel (Materiel | Materiel[] , String)]]></notes>
+                            </task>
                         </task>
                     </task>
                 </task>
