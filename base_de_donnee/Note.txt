@@ -1,0 +1,15 @@
+Choix de la base de donnée :
+    -Utilisation de postgreSQL
+    -Plus de fonctionnalité que MySql 
+    -Plus de types de données sont supportés par PostgreSQL que mySQL
+    -OpenSource donc moins cher que Oracle qui est un produit commercial
+    -Peut effectuer des requêtes complexes 
+    -tres flexible, facile à personnaliser
+
+Utilisation
+    -Cryptage du mot de passe : bcrypt
+    -exemple de cryptage crypt('mon_mot_de_passe', gen_salt('bf'))
+    -utilisation de l'extension pgcrypto (deja mis dans base.sql)
+    -format du mail nom_adresse@(gmail/hotmail/yahoo).com --peut être modifier 
+    -aucune valeur null dans la table membre
+
