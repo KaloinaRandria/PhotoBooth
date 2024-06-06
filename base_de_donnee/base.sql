@@ -5,8 +5,8 @@
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
 --DATABASE ET ROLE
-CREATE DATABASE photobooth;
 CREATE role photobooth LOGIN PASSWORD 'photobooth';
+CREATE DATABASE photobooth;
 ALTER DATABASE photobooth OWNER TO photobooth;
 
 --TABLES 
@@ -30,7 +30,7 @@ CREATE TABLE membre(
     date_de_naissance DATE NOT NULL,
     username VARCHAR(25) NOT NULL,
     mail VARCHAR(60) NOT NULL,
-    mot_de_passe VARCHAR(60) NOT NULL,
+    mot_de_passe VARCHAR(255) NOT NULL,
     date_embauche DATE NOT NULL,
     id_poste INT REFERENCES poste(id_poste) NOT NULL
     CONSTRAINT email_format CHECK(mail ~* '^[A-Za-z0-9._%+-]+@(gmail|hotmail|yahoo)\.(com|mg|fr)$')
@@ -41,7 +41,7 @@ CREATE TABLE image_membre(
     id_image_membre SERIAL PRIMARY KEY,
     id_membre VARCHAR(20) REFERENCES membre(id_membre) NOT NULL,
     image_url VARCHAR(250) NOT NULL,
-    date_insertion DATETIME
+    date_insertion TIMESTAMP
 );
 
 --modification de la contrainte pour le format du mail, securisation du format de mail
@@ -59,14 +59,14 @@ CREATE TABLE salle(
 CREATE TABLE image_salle(
     id_image_salle SERIAL PRIMARY KEY,
     image_url VARCHAR(250) NOT NULL,
-    date_insertion DATETIME
+    date_insertion TIMESTAMP
 );
 
 --CATEGORIE 
 CREATE SEQUENCE categorie_id START 1 INCREMENT 1;
 CREATE TABLE categorie(
     id_categorie VARCHAR(10) PRIMARY KEY,
-    intitule VARCHAR(100) NOT NULL UNIQUE,
+    intitule VARCHAR(100) NOT NULL UNIQUE
 );
 
 --THEME & MATERIEL
@@ -86,7 +86,7 @@ CREATE TABLE image_theme(
     id_image_theme SERIAL PRIMARY KEY,
     id_theme VARCHAR(10) NOT NULL REFERENCES theme(id_theme),
     image_url VARCHAR(250) NOT NULL,
-    date_insertion DATETIME NOT NULL
+    date_insertion TIMESTAMP NOT NULL
 );
 
 CREATE SEQUENCE materiel_id START 1 INCREMENT 1;
@@ -100,7 +100,7 @@ CREATE TABLE materiel(
 --Proposition 1 creation de table materiel_quantite pour du transactionnel
 CREATE TABLE materiel_quantite(
     id_materiel_quantite SERIAL PRIMARY KEY,
-    id_materiel VARCHAR(10) NOT NULL REFERENCES materiel(id_materie),
+    id_materiel VARCHAR(10) NOT NULL REFERENCES materiel(id_materiel),
     quantite INT NOT NULL DEFAULT 0
 );
 --Proposition 2 ajout direct de la quantite dans materiel et modification avec update
@@ -146,18 +146,20 @@ create table client(
     email varchar(250)not null unique,
     num_telephone varchar(250) not null unique
 );
+--modification de la contrainte pour le format du mail, securisation du format de mail
+ALTER TABLE client ADD CONSTRAINT email_format CHECK (email ~* '^[A-Za-z0-9._%+-]+@(gmail|hotmail|yahoo)\.(com|mg|fr)$');
 
 create table image_client(
     id_image_client SERIAL PRIMARY KEY,
-    id_client VARCHAR(10) PRIMARY KEY,
+    id_client VARCHAR(10) REFERENCES client(id_client),
     image_url varchar(250) not null,
-    date_insertion datetime 
+    date_insertion TIMESTAMP 
 );
 
 CREATE SEQUENCE reservation_id START 1 INCREMENT 1;
 create table reservation(
     id_reservation VARCHAR(15) PRIMARY KEY,
-    date_reservation datetime not null ,
+    date_reservation TIMESTAMP not null ,
     date_reservee DATE not null,
     id_client VARCHAR(10) references client(id_client) not null,
     id_service VARCHAR(10) references service(id_service) not null,

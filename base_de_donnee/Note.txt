@@ -18,7 +18,7 @@ Utilisation
 indication 
     -Bien lire les commentaires de la base car il y a des propositions
 
-id_format : 
+id_format : fonction.sql --> fonction pour parametrer les id. Permet le formatage automatique des id lors de l'insertion de données
     salle : SAL1
     categorie : CAT1
     theme : THE1
@@ -26,4 +26,4 @@ id_format :
     service : SERV1
     cleint : CLI1
     reservatin : RES1
-    
+    membre : MEMBRE1
