@@ -1,0 +1,17 @@
+
+
+<div class="base1 "></div>
+<div class="text">
+  <h2 style="font-size: 60px;font-family: poppins;font-weight: lighter;letter-spacing: 20px;">WELCOME</h2><br>
+  <p style="letter-spacing: 10px;">Magic in front, and behind the camera</p>
+</div>
+<div class="base2 "></div>
+<div class="formulaire">
+  <img src="assets/images/logo/logo.png" alt="gogo" width="150" height="130"><br>
+  <form [formGroup]="form" (ngSubmit)="login()">
+    <input type="text" formControlName="username" class="f-input" placeholder="Username">
+    <input type="password" formControlName="password" class="f-input" placeholder="Password"><br><br><br>
+    <button class="btn">Login</button>
+  </form>
+</div>
+

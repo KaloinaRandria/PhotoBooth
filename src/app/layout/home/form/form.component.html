@@ -1,0 +1,138 @@
+<div class="row">
+  <div class="col-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Basic form elements</h4>
+        <p class="card-description">Basic form elements</p>
+        <form [formGroup]="form" (ngSubmit)="submitForm()">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" formControlName="name" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <label>Email address</label>
+            <input type="email" class="form-control" formControlName="email" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" formControlName="password" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <label>Gender</label>
+            <select class="form-control" formControlName="gender">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>File upload</label>
+            <input type="file" id="fileInput" (change)="onFileChange($event)" class="file-upload-default">
+            <div class="input-group col-xs-12">
+              <input type="text" class="form-control file-upload-info" [value]="fileName" disabled placeholder="Upload Image">
+              <span class="input-group-append">
+                <button class="file-upload-browse btn btn-primary" type="button" (click)="triggerFileInputClick()">Upload CV</button>
+              </span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Birthday</label>
+            <input type="date" class="form-control" formControlName="birthday">
+          </div>
+          <div class="form-group">
+            <label>Begin</label>
+            <input type="datetime-local" class="form-control" formControlName="begin">
+          </div>
+          <div class="form-group">
+            <label for="exampleTextarea1">Textarea</label>
+            <textarea class="form-control" id="exampleTextarea1" formControlName="textarea" rows="4"></textarea>
+          </div>
+          <div class="row">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" formControlName="category" id="professional" value="professional">
+              <label class="form-check-label" for="professional">Professionnel</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" formControlName="category" id="basic" value="basic">
+              <label class="form-check-label" for="basic">Basic</label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary mr-2">Submit</button>
+          <button type="button" class="btn btn-dark">Cancel</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Form without file</h4>
+    <form [formGroup]="formulaire" (ngSubmit)="submitFormulaire()">
+      <div class="form-group">
+        <label>Input de texte</label>
+        <input type="text" class="form-control" formControlName="text" id="f2text" placeholder="Entrez du texte">
+      </div>
+      <div class="form-group">
+        <label>Input d'email</label>
+        <input type="email" class="form-control" formControlName="email" id="f2email" placeholder="Entrez votre email">
+      </div>
+      <div class="form-group">
+        <label>Input de mot de passe</label>
+        <input type="password" class="form-control" formControlName="password" id="f2password" placeholder="Entrez votre mot de passe">
+      </div>
+      <div class="form-group">
+        <label >Textarea</label>
+        <textarea class="form-control" formControlName="textarea" id="f2textarea" rows="3"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Input de numéro</label>
+        <input type="number" class="form-control" formControlName="number" id="f2number" placeholder="Entrez un numéro">
+      </div>
+      <div class="form-group">
+        <label>Input de date</label>
+        <input type="date" formControlName="date" class="form-control" id="f2date">
+      </div>
+      <div class="form-group">
+        <label>Input datetime-local</label>
+        <input type="datetime-local" formControlName="datetime" class="form-control" id="2datetime">
+      </div>
+      <div class="form-group">
+        <label>Input de couleur</label>
+        <input type="color" formControlName="color" class="form-control" id="f2color">
+      </div>
+      <div class="form-group">
+        <label>Sélection</label>
+        <select class="form-control" formControlName="select" id="f2select">
+          <option>Option 1</option>
+          <option>Option 2</option>
+          <option>Option 3</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Checkbox</label>
+        <div class="form-check">
+          <input class="form-check-input" formControlName="checkbox" type="checkbox" value="" id="f2checkbox">
+          <label class="form-check-label">
+            Cochez moi
+          </label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label >Radio</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" formControlName="radio" name="radios" id="f2radio1" value="option1" checked>
+          <label class="form-check-label">
+            Option 1
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" formControlName="radio" name="radios" id="f2radio2" value="option2">
+          <label class="form-check-label">
+            Option 2
+          </label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Envoyer</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* GSAP */
+
+/*@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');*/
+@import '@angular/cdk/overlay-prebuilt.css';
+@import "animate.css/animate.min.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  position: relative;
+
+  background: #241414;
+
+}
+
+.gradient-text {
+  background-image: linear-gradient(to right, #dd0031, #d95aea);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
