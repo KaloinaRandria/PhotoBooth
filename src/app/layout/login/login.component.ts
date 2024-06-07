@@ -47,7 +47,6 @@ export class LoginComponent implements OnInit, OnDestroy {
         this.addFadeOutAnimation().then(() => {
           this.router.navigate(['/home/dashboard']).then(r => true);
         });
-
       },
       error:(err) => {
         console.log(err);
