@@ -14,6 +14,7 @@ body{
   transform: rotate(65deg);
   box-shadow: 0 0px 50px black;
   position: absolute;
+  animation: fadeInLeft 1s ease-out forwards;
 }
 .base2{
   position: absolute;
@@ -24,10 +25,11 @@ body{
   background: rgb(109, 20, 20);
   transform: rotate(65deg);
   box-shadow: 0 0px 50px black;
+  animation: fadeInTop 1s ease-out forwards;
 }
 .formulaire{
   position: relative;
-  left: 113vh;
+  left: 133vh;
   top: 26vh;
   width: 50vh;
   height: 50vh;
@@ -35,6 +37,10 @@ body{
   text-align: center;
   border-radius: 200px;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .f-input{
   color: rgb(236, 236, 236) !important;
@@ -69,3 +75,62 @@ body{
   padding: 20px;
   color: white;
 }
+
+@keyframes fadeInTop {
+  0% {
+    opacity: 0;
+    margin-top: -106vh;
+  }
+  100% {
+    opacity: 1;
+    margin-top: -80vh;
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    margin-left: -135vh;
+  }
+  100% {
+    opacity: 1;
+    margin-left: -100vh;
+  }
+}
+
+.search-bar {
+  width: 200px;
+  height: 35px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #303030;
+  border-bottom: 2px solid #9a9a9a;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #2d2d2d;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.search-bar::placeholder {
+  color: #9a9a9a;
+}
+
+.search-bar:hover {
+  background-color: #313131;
+}
+
+.search-bar:active,
+.search-bar:focus {
+  background-color: #1e1f20;
+  border: 1px solid #2d2d2d;
+  border-bottom: 2px solid #4cc2ff;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
