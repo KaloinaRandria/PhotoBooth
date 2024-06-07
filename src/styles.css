@@ -33,3 +33,21 @@ body.login {
   color: transparent;
 }
 
+body {
+  background: linear-gradient(-45deg, #241414, #231717, #230505, #2a2727);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+

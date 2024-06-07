@@ -13,7 +13,7 @@ import {FormBuilder, FormGroup} from "@angular/forms";
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
 
   title: string = Constants.APP_TITLE;
   form : FormGroup;
