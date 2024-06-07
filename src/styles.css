@@ -23,6 +23,10 @@ body {
 
 }
 
+body.login {
+  overflow: hidden;
+}
+
 .gradient-text {
   background-image: linear-gradient(to right, #dd0031, #d95aea);
   -webkit-background-clip: text;

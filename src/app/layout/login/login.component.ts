@@ -1,4 +1,4 @@
-import {Component, OnInit, signal} from '@angular/core';
+import {Component, OnInit, signal, OnDestroy, Renderer2 } from '@angular/core';
 import {User} from "../../class/model/user/user";
 import {LoginService} from "../../service/user/login.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
@@ -23,7 +23,12 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  constructor(private fBuilder : FormBuilder , private loginService : LoginService , private router : Router , private alert : MatSnackBar) {
+  ngOnDestroy(): void {
+    this.renderer.removeClass(document.body, 'login');
+  }
+
+  constructor(private renderer: Renderer2, private fBuilder : FormBuilder , private loginService : LoginService , private router : Router , private alert : MatSnackBar) {
+    this.renderer.addClass(document.body, 'login');
     this.form = this.fBuilder.group({
       username : [''],
       password : ['']

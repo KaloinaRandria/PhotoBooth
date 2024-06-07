@@ -4,7 +4,7 @@ body{
   margin: 0;
   background: #241414;
   max-height: 100vh;
-  overflow: hidden;
+  overflow: hidden !important;
 }
 .base1{
   margin-left: -100vh;
