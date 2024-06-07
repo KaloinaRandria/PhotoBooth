@@ -44,7 +44,9 @@ export class LoginComponent implements OnInit, OnDestroy {
       next:(valiny)=> {
         console.log(valiny);
         User.setUserAuth(DataSecurity.encryptData(valiny.data, 'auth'));
-        this.router.navigate(['/home/dashboard']).then(r => true);
+        this.addFadeOutAnimation().then(() => {
+          this.router.navigate(['/home/dashboard']).then(r => true);
+        });
 
       },
       error:(err) => {
@@ -54,6 +56,26 @@ export class LoginComponent implements OnInit, OnDestroy {
     });
   }
 
+  private addFadeOutAnimation(): Promise<void> {
+    return new Promise((resolve) => {
+      const text = document.querySelector('.text');
+      this.renderer.addClass(text, 'fade-out-left');
 
+      const base1 = document.querySelector('.base1');
+      this.renderer.addClass(base1, 'fade-out-left');
+
+      const base2 = document.querySelector('.base2');
+      this.renderer.addClass(base2, 'fade-out-top');
+
+      const form = document.querySelector('.formulaire');
+      if (form) {
+        this.renderer.setAttribute(form, 'class', 'formulaire');
+        this.renderer.addClass(form, 'fade-out-right');
+      }
+      setTimeout(() => {
+        resolve();
+      }, 1000);
+    });
+  }
 }
 
