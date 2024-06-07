@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
   title: string = Constants.APP_TITLE;
   form : FormGroup;
   ngOnInit() {
+    this.renderer.addClass(document.body, 'login');
     if (User.verify()) {
       this.router.navigate(['/home/dashboard']).then(r => true);
     }
@@ -28,7 +29,6 @@ export class LoginComponent implements OnInit {
   }
 
   constructor(private renderer: Renderer2, private fBuilder : FormBuilder , private loginService : LoginService , private router : Router , private alert : MatSnackBar) {
-    this.renderer.addClass(document.body, 'login');
     this.form = this.fBuilder.group({
       username : [''],
       password : ['']
