@@ -87,6 +87,17 @@ body{
   }
 }
 
+@keyframes fadeOutTop {
+  0% {
+    opacity: 1;
+    margin-top: -80vh;
+  }
+  100% {
+    opacity: 0;
+    margin-top: -110vh;
+  }
+}
+
 @keyframes fadeInLeft {
   0% {
     opacity: 0;
@@ -96,6 +107,42 @@ body{
     opacity: 1;
     margin-left: -100vh;
   }
+}
+
+
+
+@keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    margin-left: -100vh;
+  }
+  100% {
+    opacity: 0;
+    margin-left: -135vh;
+  }
+}
+
+@keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    left: 133vh;
+  }
+  100% {
+    opacity: 0;
+    left: 163vh;
+  }
+}
+
+.fade-out-top {
+  animation: fadeOutTop 1s forwards;
+}
+
+.fade-out-left {
+  animation: fadeOutLeft 1s forwards;
+}
+
+.fade-out-right {
+  animation: fadeOutRight 1s forwards;
 }
 
 .search-bar {
@@ -134,3 +181,11 @@ body{
   gap: 25px;
 }
 
+.fade-out {
+  animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
