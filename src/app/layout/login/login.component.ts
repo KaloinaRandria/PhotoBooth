@@ -1,4 +1,4 @@
-import {Component, OnInit, signal} from '@angular/core';
+import {Component, OnInit, signal, OnDestroy, Renderer2 } from '@angular/core';
 import {User} from "../../class/model/user/user";
 import {LoginService} from "../../service/user/login.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
@@ -13,7 +13,7 @@ import {FormBuilder, FormGroup} from "@angular/forms";
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
 
   title: string = Constants.APP_TITLE;
   form : FormGroup;
@@ -23,7 +23,12 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  constructor(private fBuilder : FormBuilder , private loginService : LoginService , private router : Router , private alert : MatSnackBar) {
+  ngOnDestroy(): void {
+    this.renderer.removeClass(document.body, 'login');
+  }
+
+  constructor(private renderer: Renderer2, private fBuilder : FormBuilder , private loginService : LoginService , private router : Router , private alert : MatSnackBar) {
+    this.renderer.addClass(document.body, 'login');
     this.form = this.fBuilder.group({
       username : [''],
       password : ['']
@@ -39,8 +44,9 @@ export class LoginComponent implements OnInit {
       next:(valiny)=> {
         console.log(valiny);
         User.setUserAuth(DataSecurity.encryptData(valiny.data, 'auth'));
-        this.router.navigate(['/home/dashboard']).then(r => true);
-
+        this.addFadeOutAnimation().then(() => {
+          this.router.navigate(['/home/dashboard']).then(r => true);
+        });
       },
       error:(err) => {
         console.log(err);
@@ -49,6 +55,26 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  private addFadeOutAnimation(): Promise<void> {
+    return new Promise((resolve) => {
+      const text = document.querySelector('.text');
+      this.renderer.addClass(text, 'fade-out-left');
 
+      const base1 = document.querySelector('.base1');
+      this.renderer.addClass(base1, 'fade-out-left');
+
+      const base2 = document.querySelector('.base2');
+      this.renderer.addClass(base2, 'fade-out-top');
+
+      const form = document.querySelector('.formulaire');
+      if (form) {
+        this.renderer.setAttribute(form, 'class', 'formulaire');
+        this.renderer.addClass(form, 'fade-out-right');
+      }
+      setTimeout(() => {
+        resolve();
+      }, 1000);
+    });
+  }
 }
 

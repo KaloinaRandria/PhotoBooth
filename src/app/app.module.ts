@@ -35,6 +35,7 @@ import {MatCard, MatCardActions, MatCardHeader, MatCardModule} from "@angular/ma
 import { ChatComponent } from './layout/home/chat/chat.component';
 import { FormComponent } from './layout/home/form/form.component';
 import { EmployeComponent } from './layout/home/employe/employe.component';
+import { InputStyleComponent } from './layout/element/input/input-style/input-style.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { EmployeComponent } from './layout/home/employe/employe.component';
     PdfComponent,
     ChatComponent,
     FormComponent,
-    EmployeComponent
+    EmployeComponent,
+    InputStyleComponent
   ],
   imports: [
     BrowserModule,

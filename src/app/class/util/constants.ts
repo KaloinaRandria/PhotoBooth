@@ -1,6 +1,6 @@
 export class Constants {
   static readonly APP_TITLE: string = "PHOTOBOOTH";
-  static readonly BACK_URL: string = "http://172.20.254.114:8080";
+  static readonly BACK_URL: string = "http://localhost:8080";
   static readonly USR_KEY: string = "usr_auth";
   static readonly LOGIN_API: string = "/user/connect";
   static readonly UPLOAD_API: string = "/user/file";
