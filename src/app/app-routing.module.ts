@@ -2,13 +2,18 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {LoginComponent} from "./layout/login/login.component";
 import {DashboardComponent} from "./layout/home/dashboard/dashboard.component";
-import {StatistiqueComponent} from "./layout/home/statistique/statistique.component";
-import {ThemeComponent} from "./layout/home/stock/theme/theme.component";
 import {BadRequestComponent} from "./layout/status/bad-request/bad-request.component";
-import {PdfComponent} from "./layout/home/pdf/pdf.component";
 import {HomeComponent} from "./layout/home/home.component";
-import {ChatComponent} from "./layout/home/chat/chat.component";
-import {FormComponent} from "./layout/home/form/form.component";
+import {InsertStaffComponent} from "./layout/home/staff/insert-staff/insert-staff.component";
+import {ListStaffComponent} from "./layout/home/staff/list-staff/list-staff.component";
+import {InsertClientComponent} from "./layout/home/client/insert-client/insert-client.component";
+import {ListClientComponent} from "./layout/home/client/list-client/list-client.component";
+import {InsertMaterialComponent} from "./layout/home/material/insert-material/insert-material.component";
+import {ListMaterialComponent} from "./layout/home/material/list-material/list-material.component";
+import {InsertThemeComponent} from "./layout/home/theme/insert-theme/insert-theme.component";
+import {ListThemeComponent} from "./layout/home/theme/list-theme/list-theme.component";
+import {InsertReservationComponent} from "./layout/home/reservation/insert-reservation/insert-reservation.component";
+import {ListReservationComponent} from "./layout/home/reservation/list-reservation/list-reservation.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -19,21 +24,29 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
-      { path: 'pdf', component: PdfComponent },
-      { path: 'form', component: FormComponent },
-      { path: 'statistique', component: StatistiqueComponent },
-      { path: 'chat', component: ChatComponent },
-      {
-        path: 'stock',
-        children: [
-          {
-            path: 'create',
-            children: [
-              { path: 'theme', component: ThemeComponent}
-            ]
-          }
-        ]
-      }
+
+      { path: 'staff/insert', component: InsertStaffComponent },
+      { path: 'staff/list', component: ListStaffComponent },
+      { path: 'client/insert', component: InsertClientComponent },
+      { path: 'client/list', component: ListClientComponent },
+      { path: 'material/insert', component: InsertMaterialComponent },
+      { path: 'material/list', component: ListMaterialComponent },
+      { path: 'theme/insert', component: InsertThemeComponent },
+      { path: 'theme/list', component: ListThemeComponent },
+      { path: 'reservation/insert', component: InsertReservationComponent },
+      { path: 'reservation/list', component: ListReservationComponent }
+
+
+
+
+
+
+
+
+
+
+
+
     ]
   },
   { path: '**', component: BadRequestComponent }
