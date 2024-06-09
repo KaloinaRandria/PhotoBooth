@@ -40,6 +40,10 @@ import { InsertThemeComponent } from './layout/home/theme/insert-theme/insert-th
 import { ListThemeComponent } from './layout/home/theme/list-theme/list-theme.component';
 import { InsertReservationComponent } from './layout/home/reservation/insert-reservation/insert-reservation.component';
 import { ListReservationComponent } from './layout/home/reservation/list-reservation/list-reservation.component';
+import { InsertRoomComponent } from './layout/home/room/insert-room/insert-room.component';
+import { ListRoomComponent } from './layout/home/room/list-room/list-room.component';
+import { InsertCategoryComponent } from './layout/home/category/insert-category/insert-category.component';
+import { ListCategoryComponent } from './layout/home/category/list-category/list-category.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +72,11 @@ import { ListReservationComponent } from './layout/home/reservation/list-reserva
     InsertThemeComponent,
     ListThemeComponent,
     InsertReservationComponent,
-    ListReservationComponent
+    ListReservationComponent,
+    InsertRoomComponent,
+    ListRoomComponent,
+    InsertCategoryComponent,
+    ListCategoryComponent
   ],
   imports: [
     BrowserModule,
