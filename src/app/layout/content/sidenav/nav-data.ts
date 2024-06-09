@@ -44,6 +44,38 @@ export const navData: INavbardata[] = [
 
   },
   {
+    routeLink: 'room',
+    icon: 'mdi mdi-home-map-marker',
+    label: 'Room',
+    expanded: false,
+    items: [
+      {
+        routeLink: 'room/insert',
+        label: 'Insert'
+      },
+      {
+        routeLink: 'room/list',
+        label: 'List'
+      }
+    ]
+  },
+  {
+    routeLink: 'category',
+    icon: 'mdi mdi-sort-variant',
+    label: 'Theme category',
+    expanded: false,
+    items: [
+      {
+        routeLink: 'category/insert',
+        label: 'Insert'
+      },
+      {
+        routeLink: 'category/list',
+        label: 'List'
+      }
+    ]
+  },
+  {
     routeLink: 'theme',
     // icon: 'mdi mdi-auto-fix',
     icon: 'mdi mdi-brush',
