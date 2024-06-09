@@ -4,14 +4,27 @@
 
 .bell-icon{
   position: relative;
-  right: 10px;
+  right: 60px;
   top: -3px;
 }
 
 .head-user-avatar{
   transform: scale(1.5);
+  right: 30px;
+}
+.username
+{
+  position: relative;
+  top: 7px;
+  right: 40px;
 }
 
+.log-out-icon-div {
+  position: relative;
+  transform: scale(1.5);
+  left:7px;
+
+}
 
 
 .head {
@@ -181,10 +194,7 @@
 .dropdown-divider {
   color: grey;
 }
-.username
-{
-  margin-top: 9%;
-}
+
 .preview-subject{
   color:#495057;
 }
