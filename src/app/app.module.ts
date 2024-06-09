@@ -12,11 +12,9 @@ import { HeaderComponent } from './layout/content/header/header.component';
 import { SidenavComponent } from './layout/content/sidenav/sidenav.component';
 import { BodyComponent } from './layout/content/body/body.component';
 import { DashboardComponent } from './layout/home/dashboard/dashboard.component';
-import { StatistiqueComponent } from './layout/home/statistique/statistique.component';
 import { HomeComponent } from './layout/home/home.component';
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import { SublevelMenuComponent } from './layout/content/sidenav/sublevel-menu.component';
-import { ThemeComponent } from './layout/home/stock/theme/theme.component';
 import {NgOptimizedImage, registerLocaleData} from "@angular/common";
 import {CdkMenu, CdkMenuModule, CdkMenuTrigger} from "@angular/cdk/menu";
 import {OverlayModule} from "@angular/cdk/overlay";
@@ -28,14 +26,20 @@ import { HvBtnComponent } from './layout/element/button/hv-btn/hv-btn.component'
 import { ServerErrorComponent } from './layout/status/server-error/server-error.component';
 import {BaseChartDirective} from "ng2-charts";
 import { BaseContentComponent } from './layout/home/base-content/base-content.component';
-import { PdfComponent } from './layout/home/pdf/pdf.component';
 import {MatIcon} from "@angular/material/icon";
 import {MatButton, MatFabButton} from "@angular/material/button";
 import {MatCard, MatCardActions, MatCardHeader, MatCardModule} from "@angular/material/card";
-import { ChatComponent } from './layout/home/chat/chat.component';
-import { FormComponent } from './layout/home/form/form.component';
-import { EmployeComponent } from './layout/home/employe/employe.component';
 import { InputStyleComponent } from './layout/element/input/input-style/input-style.component';
+import { InsertStaffComponent } from './layout/home/staff/insert-staff/insert-staff.component';
+import { ListStaffComponent } from './layout/home/staff/list-staff/list-staff.component';
+import { InsertClientComponent } from './layout/home/client/insert-client/insert-client.component';
+import { ListClientComponent } from './layout/home/client/list-client/list-client.component';
+import { InsertMaterialComponent } from './layout/home/material/insert-material/insert-material.component';
+import { ListMaterialComponent } from './layout/home/material/list-material/list-material.component';
+import { InsertThemeComponent } from './layout/home/theme/insert-theme/insert-theme.component';
+import { ListThemeComponent } from './layout/home/theme/list-theme/list-theme.component';
+import { InsertReservationComponent } from './layout/home/reservation/insert-reservation/insert-reservation.component';
+import { ListReservationComponent } from './layout/home/reservation/list-reservation/list-reservation.component';
 
 @NgModule({
   declarations: [
@@ -45,10 +49,8 @@ import { InputStyleComponent } from './layout/element/input/input-style/input-st
     SidenavComponent,
     BodyComponent,
     DashboardComponent,
-    StatistiqueComponent,
     HomeComponent,
     SublevelMenuComponent,
-    ThemeComponent,
     BadRequestComponent,
     SendComponent,
     GitBtnComponent,
@@ -56,11 +58,17 @@ import { InputStyleComponent } from './layout/element/input/input-style/input-st
     HvBtnComponent,
     ServerErrorComponent,
     BaseContentComponent,
-    PdfComponent,
-    ChatComponent,
-    FormComponent,
-    EmployeComponent,
-    InputStyleComponent
+    InputStyleComponent,
+    InsertStaffComponent,
+    ListStaffComponent,
+    InsertClientComponent,
+    ListClientComponent,
+    InsertMaterialComponent,
+    ListMaterialComponent,
+    InsertThemeComponent,
+    ListThemeComponent,
+    InsertReservationComponent,
+    ListReservationComponent
   ],
   imports: [
     BrowserModule,
