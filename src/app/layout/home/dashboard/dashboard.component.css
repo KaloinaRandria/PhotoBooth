@@ -6,7 +6,29 @@
   border: none;
 }
 
+.card {
+  background-color: #2a1515 !important;
+}
+
+.carousel-div {
+  padding: unset !important;
+}
+
+.carousel-inner {
+  height: 400px;
+
+  .carousel-item {
+    height: -webkit-fill-available;
+
+    img {
+      height: -webkit-fill-available;
+    }
+  }
+}
+
 .carousel-item {
+  height: -webkit-fill-available;
+
   .img
   {
 
