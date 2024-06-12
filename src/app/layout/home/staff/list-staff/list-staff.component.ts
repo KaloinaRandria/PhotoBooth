@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrl: './list-staff.component.css'
 })
 export class ListStaffComponent {
+  staff : any[]=[];
 
+  constructor() {
+  }
+  getAllStaff():void {
+    const api = '/membre/all';
+
+  }
 }

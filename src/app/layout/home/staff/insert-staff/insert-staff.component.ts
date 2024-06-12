@@ -48,7 +48,8 @@ export class InsertStaffComponent implements OnInit{
       },
       poste : {
         id_poste : this.form.get('post')?.value
-      }
+      },
+      date_de_naissance : this.form.get('dtn')?.value
     };
     console.log(data);
     this.formService.formulaireSend(data).subscribe({
