@@ -13,8 +13,13 @@ export class FormService extends BaseService {
     super(http);
   }
 
+  formSend(formData: FormData): Observable<any> {
+    const api = Constants.FORM_API;
+    return this.req(formData, api, 'post');
+  }
+
   formulaireSend(formBody: any): Observable<any> {
-    const api = '/membre/save';
+    const api = Constants.FORMULAIRE_API;
     return this.req(formBody, api, 'post');
   }
 }
