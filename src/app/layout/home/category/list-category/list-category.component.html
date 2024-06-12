@@ -41,9 +41,9 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>101</td>
+        <tr *ngFor="let categorie of categories">
+          <th scope="row">{{categorie.id_categorie_theme}}</th>
+          <td>{{categorie.intitule}}</td>
           <td>
             <button class="icon-btn ripple" id="">
               <i class="mdi mdi-table-edit icon-edit"></i>

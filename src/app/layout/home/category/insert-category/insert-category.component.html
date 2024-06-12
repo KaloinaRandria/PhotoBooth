@@ -5,13 +5,12 @@
     <div class="col-lg-12 col-md-12 col-sm-12 form-div form-div-sm form-div-md form-div-lg">
       <h1 class="titre">INSERT THEME CATEGORY</h1>
 
-      <form action="" method="">
+      <form [formGroup]="form"(ngSubmit)="submitForm()">
         <div class="form-row">
           <!-- Select Client and Select Service -->
           <div class="col-md-6 mb-3">
             <label >Category label</label>
-            <input name="intitule" type="text" placeholder="label">
-
+            <input type="text" placeholder="label" formControlName="intitule">
           </div>
         </div>
 
