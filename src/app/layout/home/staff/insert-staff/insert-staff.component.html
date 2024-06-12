@@ -52,7 +52,7 @@
           <div class="col-md-4 mb-3">
             <label for="">Post</label>
             <select formControlName="post" class="form-control">
-              <option>Default select</option>
+              <option *ngFor="let poste of posteList" value="{{ poste.id_poste }}">{{ poste.intitule }}</option>
             </select>
           </div>
           <div class="col-md-4 mb-3">
