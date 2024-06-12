@@ -46,7 +46,7 @@
           <div class="col-md-4 mb-3">
             <label for="">Role</label>
             <select formControlName="role" class="form-control">
-              <option>Default select</option>
+              <option *ngFor="let role of roleList"  value="{{ role.id_role }}">{{ role.intitule }}</option>
             </select>
           </div>
           <div class="col-md-4 mb-3">

@@ -1,18 +1,21 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {FormService} from "../../../../service/form/form.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {Display} from "../../../../class/util/display";
+import {RoleService} from "../../../../service/form/role.service";
+import {Constants} from "../../../../class/util/constants";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-insert-staff',
   templateUrl: './insert-staff.component.html',
   styleUrl: './insert-staff.component.css'
 })
-export class InsertStaffComponent {
+export class InsertStaffComponent implements OnInit{
   form : FormGroup;
-
-  constructor(private fBuilder : FormBuilder , private formService : FormService , private snackBar : MatSnackBar) {
+  roleList : any[]=[];
+  constructor(private fBuilder : FormBuilder , private formService : FormService , private snackBar : MatSnackBar , private roleService : RoleService , private http : HttpClient) {
      this.form = fBuilder.group({
        prenom : [''],
        nom : [''],
@@ -27,6 +30,9 @@ export class InsertStaffComponent {
      })
    }
 
+   ngOnInit() {
+    this.getRole();
+   }
    submitForm() {
     const data ={
       prenom : this.form.get('prenom')?.value,
@@ -51,6 +57,28 @@ export class InsertStaffComponent {
         Display.alert(this.snackBar,(exeption.error.message),"close",6000);
       }
     });
+   }
+   getRole() {
+      // this.roleService.getAll().subscribe({
+      //   next:(response) => {
+      //     this.roleList = response.data;
+      //   },
+      //   error:(exception) => {
+      //     // Display.alert(this.snackBar,(exception.error.message),"close",6000);
+      //     console.log(exception);
+      //   }
+      // });
+      this.http.get(Constants.BACK_URL + '/role/all').subscribe({
+        next:(response:any) => {
+          console.log(response.data);
+          this.roleList = response.data;
+
+        },
+        error:(exception) => {
+          // Display.alert(this.snackBar,(exception.error.message),"close",6000);
+          console.log(exception);
+        }
+      });
    }
 
 }
