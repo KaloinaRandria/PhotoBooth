@@ -7,7 +7,7 @@ import {HttpClient} from "@angular/common/http";
 @Injectable({
   providedIn: 'root'
 })
-export class CategoryService extends BaseService {
+export class RoomService extends BaseService {
 
   constructor(protected override http: HttpClient) {
     super(http);
