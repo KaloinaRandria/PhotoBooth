@@ -15,6 +15,7 @@ import {HttpClient} from "@angular/common/http";
 export class InsertStaffComponent implements OnInit{
   form : FormGroup;
   roleList : any[]=[];
+  posteList : any[]=[];
   constructor(private fBuilder : FormBuilder , private formService : FormService , private snackBar : MatSnackBar , private roleService : RoleService , private http : HttpClient) {
      this.form = fBuilder.group({
        prenom : [''],
@@ -50,32 +51,35 @@ export class InsertStaffComponent implements OnInit{
     };
 
     this.formService.formulaireSend(data).subscribe({
-      next:(response)=> {
+      next:()=> {
         Display.alert(this.snackBar , "Sended Succesfully","close",3000,"succes-snackbar");
       },
-      error:(exeption) => {
-        Display.alert(this.snackBar,(exeption.error.message),"close",6000);
+      error:(exception) => {
+        Display.alert(this.snackBar,(exception.error.message),"close",6000);
       }
     });
    }
    getRole() {
-      // this.roleService.getAll().subscribe({
-      //   next:(response) => {
-      //     this.roleList = response.data;
-      //   },
-      //   error:(exception) => {
-      //     // Display.alert(this.snackBar,(exception.error.message),"close",6000);
-      //     console.log(exception);
-      //   }
-      // });
-      this.http.get(Constants.BACK_URL + '/role/all').subscribe({
+      this.roleService.getAll().subscribe({
         next:(response:any) => {
           console.log(response.data);
           this.roleList = response.data;
-
         },
         error:(exception) => {
-          // Display.alert(this.snackBar,(exception.error.message),"close",6000);
+          Display.alert(this.snackBar,(exception.error.message),"close",6000);
+          console.log(exception);
+        }
+      });
+   }
+
+   getPoste() {
+      this.http.get(Constants.BACK_URL + '/poste/all').subscribe({
+        next:(response:any) => {
+          console.log(response.data);
+          this.posteList = response.data;
+        },
+        error:(exception) => {
+          Display.alert(this.snackBar,(exception.error.message),"close",6000);
           console.log(exception);
         }
       });
