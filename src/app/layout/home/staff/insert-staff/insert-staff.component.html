@@ -45,7 +45,7 @@
           <!--          role post date embauche-->
           <div class="col-md-4 mb-3">
             <label for="">Role</label>
-            <select formControlName="role" class="form-control">
+            <select  formControlName="role" class="form-control">
               <option *ngFor="let role of roleList"  value="{{ role.id_role }}">{{ role.intitule }}</option>
             </select>
           </div>
@@ -56,10 +56,10 @@
             </select>
           </div>
           <div class="col-md-4 mb-3">
+           <div class="col-md-4 mb-3">
             <label for="">Hiring date</label>
-            <select formControlName="date_embauche" class="form-control">
-              <option>Default select</option>
-            </select>
+            <input formControlName="date_embauche" type="date" class="form-control" placeholder="" required>
+          </div>
           </div>
         </div>
 
