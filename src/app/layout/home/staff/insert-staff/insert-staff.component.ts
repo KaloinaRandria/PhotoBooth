@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormService} from "../../../../service/form/form.service";
+import {MatSnackBar} from "@angular/material/snack-bar";
+import {Display} from "../../../../class/util/display";
 
 @Component({
   selector: 'app-insert-staff',
@@ -9,7 +12,7 @@ import {FormBuilder, FormGroup} from "@angular/forms";
 export class InsertStaffComponent {
   form : FormGroup;
 
-  constructor(fBuilder : FormBuilder) {
+  constructor(private fBuilder : FormBuilder , private formService : FormService , private snackBar : MatSnackBar) {
      this.form = fBuilder.group({
        prenom : [''],
        nom : [''],
@@ -39,6 +42,15 @@ export class InsertStaffComponent {
         id_poste : this.form.get('post')?.value
       }
     };
+
+    this.formService.formulaireSend(data).subscribe({
+      next:(response)=> {
+        Display.alert(this.snackBar , "Sended Succesfully","close",3000,"succes-snackbar");
+      },
+      error:(exeption) => {
+        Display.alert(this.snackBar,(exeption.error.message),"close",6000);
+      }
+    });
    }
 
 }
