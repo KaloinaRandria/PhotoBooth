@@ -31,9 +31,13 @@ export class InsertStaffComponent {
       username : this.form.get('username')?.value,
       mail : this.form.get('mail')?.value,
       mot_de_passe : this.form.get('mdp')?.value,
-      poste : this.form.get('post')?.value,
       date_embauche : this.form.get('date_embauche')?.value,
-    // mbola tsy misy salaire sy role 
+      role : {
+        id_role : this.form.get('role')?.value
+      },
+      poste : {
+        id_poste : this.form.get('post')?.value
+      }
     };
    }
 
