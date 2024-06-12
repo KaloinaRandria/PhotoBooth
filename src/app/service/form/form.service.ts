@@ -14,7 +14,7 @@ export class FormService extends BaseService {
   }
 
   formulaireSend(formBody: any): Observable<any> {
-    const api = Constants.FORMULAIRE_API;
+    const api = '/membre/save';
     return this.req(formBody, api, 'post');
   }
 }

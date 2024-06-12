@@ -33,6 +33,7 @@ export class InsertStaffComponent implements OnInit{
 
    ngOnInit() {
     this.getRole();
+    this.getPoste();
    }
    submitForm() {
     const data ={
@@ -47,9 +48,10 @@ export class InsertStaffComponent implements OnInit{
       },
       poste : {
         id_poste : this.form.get('post')?.value
-      }
+      },
+      date_de_naissance : this.form.get('dtn')?.value
     };
-
+    console.log(data);
     this.formService.formulaireSend(data).subscribe({
       next:()=> {
         Display.alert(this.snackBar , "Sended Succesfully","close",3000,"succes-snackbar");
