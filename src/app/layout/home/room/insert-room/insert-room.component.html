@@ -5,12 +5,12 @@
     <div class="col-lg-12 col-md-12 col-sm-12 form-div form-div-sm form-div-md form-div-lg">
       <h1 class="titre">INSERT ROOM</h1>
 
-      <form action="" method="">
+      <form [formGroup]="form"(ngSubmit)="submitForm()">
         <div class="form-row">
           <!-- Select Client and Select Service -->
           <div class="col-md-6 mb-3">
             <label >Room number</label>
-            <input name="numero" type="number" placeholder="label">
+            <input formControlName="numero" type="number" placeholder="label">
 
           </div>
         </div>
