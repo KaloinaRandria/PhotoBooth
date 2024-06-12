@@ -20,9 +20,9 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (!User.verify()) {
-      this.router.navigate(['/login']).then(r => true);
-    }
+    // if (!User.verify()) {
+    //   this.router.navigate(['/login']).then(r => true);
+    // }
   }
 
   onToggleSideNav(data: SideNavToggle) {
