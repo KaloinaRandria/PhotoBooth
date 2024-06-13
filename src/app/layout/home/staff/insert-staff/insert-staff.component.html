@@ -6,21 +6,21 @@
     <div class=" col-lg-8 col-md-10 col-sm-12 form-div form-div-sm form-div-md form-div-lg">
       <h1 class="titre">INSERT STAFF</h1>
 
-      <form action="" method="">
+      <form [formGroup]="form" (ngSubmit)="submitForm()">
         <div class="form-row">
           <div class="col-md-4 mb-3">
             <label for="">First name</label>
-            <input name="prenom" type="text" class="form-control" id="" placeholder="First name" value="" required>
+            <input formControlName="prenom" type="text" class="form-control" placeholder="First name" value="" required>
           </div>
           <div class="col-md-4 mb-3">
             <label for="">Last name</label>
-            <input name="nom" type="text" class="form-control" id="" placeholder="Last name"
+            <input formControlName="nom" type="text" class="form-control" placeholder="Last name"
                    value="" required>
           </div>
           <div class="col-md-4 mb-3">
             <label for="">Username</label>
             <div class="input-group">
-              <input name="username" type="text" class="form-control" id="" placeholder="username"
+              <input formControlName="username" type="text" class="form-control" placeholder="username"
                      aria-describedby="inputGroupPrepend2" required>
             </div>
           </div>
@@ -29,15 +29,15 @@
           <!--          dtn mail mdp-->
           <div class="col-md-4 mb-3">
             <label for="">Date of birth</label>
-            <input name="dtn" type="date" class="form-control" id="" placeholder="" required>
+            <input formControlName="dtn" type="date" class="form-control" placeholder="" required>
           </div>
           <div class="col-md-4 mb-3">
             <label for="">E-mail</label>
-            <input name="mail" type="email" class="form-control " id="" placeholder="e-mail" required>
+            <input formControlName="mail" type="email" class="form-control " placeholder="e-mail" required>
           </div>
           <div class="col-md-4 mb-3">
             <label for="">Password</label>
-            <input name="mdp" type="password" class="form-control" id="" placeholder="" required>
+            <input formControlName="mdp" type="password" class="form-control" placeholder="" required>
           </div>
         </div>
 
@@ -45,21 +45,21 @@
           <!--          role post date embauche-->
           <div class="col-md-4 mb-3">
             <label for="">Role</label>
-            <select name="role" class="form-control">
-              <option>Default select</option>
+            <select  formControlName="role" class="form-control">
+              <option *ngFor="let role of roleList"  value="{{ role.id_role }}">{{ role.intitule }}</option>
             </select>
           </div>
           <div class="col-md-4 mb-3">
             <label for="">Post</label>
-            <select name="post" class="form-control">
-              <option>Default select</option>
+            <select formControlName="post" class="form-control">
+              <option *ngFor="let poste of posteList" value="{{ poste.id_poste }}">{{ poste.intitule }}</option>
             </select>
           </div>
           <div class="col-md-4 mb-3">
+           <div class="col-md-4 mb-3">
             <label for="">Hiring date</label>
-            <select name="date_embauche" class="form-control">
-              <option>Default select</option>
-            </select>
+            <input formControlName="date_embauche" type="date" class="form-control" placeholder="" required>
+          </div>
           </div>
         </div>
 
@@ -67,7 +67,7 @@
           <!--          role post date embauche-->
           <div class="col-md-4 mb-3">
             <label for="">Salary</label>
-            <input name="salaire" type="number" class="form-control " id="" placeholder="" required>
+            <input formControlName="salaire" type="number" class="form-control " id="" placeholder="" required>
 
           </div>
 
